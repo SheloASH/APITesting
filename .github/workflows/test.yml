@@ -28,7 +28,7 @@ jobs:
       - name: Run API Tests
         run: ./node_modules/.bin/mocha tests --recursive --timeout 10000  
       - name: Upload Mochawesome report artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
           path: mochawesome-report/  
