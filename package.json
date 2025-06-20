@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "axios": "^1.10.0",
+    "chai": "^5.2.0",
+    "dotenv": "^16.5.0",
+    "mocha": "^11.7.0"
+  },
+  "scripts": {
+    "test": "mocha tests --recursive --timeout 10000"
+  },
+  "type": "module"
+}
