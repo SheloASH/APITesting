@@ -23,4 +23,4 @@ jobs:
         run: npm install
 
       - name: Run API Tests
-        run: npm test
+        run: npx mocha tests --recursive --timeout 10000
