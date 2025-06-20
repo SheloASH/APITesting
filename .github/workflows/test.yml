@@ -27,4 +27,9 @@ jobs:
         run: chmod +x node_modules/.bin/mocha
       - name: Run API Tests
         run: ./node_modules/.bin/mocha tests --recursive --timeout 10000  
+      - name: Upload Mochawesome report artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: mochawesome-report
+          path: mochawesome-report/  
       
