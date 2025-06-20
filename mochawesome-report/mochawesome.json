@@ -1,0 +1,234 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-20T12:04:26.175Z",
+    "end": "2025-06-20T12:04:27.497Z",
+    "duration": 1322,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "251e62a7-45bd-4847-8c49-eae73f458731",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "44d45a1f-543f-45a7-b992-1aaf1d935db0",
+          "title": "Authentication tests",
+          "fullFile": "C:\\Users\\Shelia\\Desktop\\ApiTesting\\tests\\api\\auth.test.js",
+          "file": "\\tests\\api\\auth.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should register user using valid credentials",
+              "fullTitle": "Authentication tests should register user using valid credentials",
+              "timedOut": false,
+              "duration": 506,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.post(`${baseURL}/register`, {\n    \"email\": \"eve.holt@reqres.in\",\n    \"password\": \"pistol\"\n}, {headers: {\n    \"x-api-key\" : \"reqres-free-v1\"\n}})\nexpect(response.status).to.equal(200)\nexpect(response.data).to.have.property('id')\nexpect(response.data).to.have.property('token')",
+              "err": {},
+              "uuid": "9463df0e-d58b-4331-91d1-6435e8683bea",
+              "parentUUID": "44d45a1f-543f-45a7-b992-1aaf1d935db0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fail to register user without password",
+              "fullTitle": "Authentication tests should fail to register user without password",
+              "timedOut": false,
+              "duration": 169,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n    await axios.post(`${baseURL}/register`, {\n    \"email\": \"eve.holt@reqres.in\"\n    }, {headers: {\n        \"x-api-key\" : \"reqres-free-v1\"\n    }});\n} catch (error) {\n    expect(error.response.status).to.equal(400);\n    expect(error.response.data.error).to.equal(\"Missing password\");\n}",
+              "err": {},
+              "uuid": "aef4a0b1-280b-4259-b9fe-8d97df643577",
+              "parentUUID": "44d45a1f-543f-45a7-b992-1aaf1d935db0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should login successfully",
+              "fullTitle": "Authentication tests should login successfully",
+              "timedOut": false,
+              "duration": 174,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.post(`${baseURL}/login`, {\n\"email\": \"eve.holt@reqres.in\",\n\"password\": \"pistol\"\n}, {headers: {\n    \"x-api-key\" : \"reqres-free-v1\"\n}});\nexpect(response.status).to.equal(200);\nexpect(response.data).to.have.property('token');",
+              "err": {},
+              "uuid": "b5ab1ba0-17ad-4125-b30e-2f72ab59efc1",
+              "parentUUID": "44d45a1f-543f-45a7-b992-1aaf1d935db0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fail login with missing password",
+              "fullTitle": "Authentication tests should fail login with missing password",
+              "timedOut": false,
+              "duration": 176,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n    await axios.post(`${baseURL}/login`, {\n    \"email\": \"eve.holt@reqres.in\"\n    }, {headers: {\n        \"x-api-key\" : \"reqres-free-v1\"\n    }});\n} catch (error) {\n    expect(error.response.status).to.equal(400);\n    expect(error.response.data.error).to.equal(\"Missing password\");\n}",
+              "err": {},
+              "uuid": "162f4c87-e566-49f4-b8c3-8c4ec2fdbe06",
+              "parentUUID": "44d45a1f-543f-45a7-b992-1aaf1d935db0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9463df0e-d58b-4331-91d1-6435e8683bea",
+            "aef4a0b1-280b-4259-b9fe-8d97df643577",
+            "b5ab1ba0-17ad-4125-b30e-2f72ab59efc1",
+            "162f4c87-e566-49f4-b8c3-8c4ec2fdbe06"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1025,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "ac56ea74-287e-4efd-b34e-5ea9a386da28",
+          "title": "User tests",
+          "fullFile": "C:\\Users\\Shelia\\Desktop\\ApiTesting\\tests\\api\\users.test.js",
+          "file": "\\tests\\api\\users.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list users on page 2",
+              "fullTitle": "User tests should list users on page 2",
+              "timedOut": false,
+              "duration": 57,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.get(`${baseURL}/users?page=2`, {\n    headers: {\n       \"x-api-key\": \"reqres-free-v1\" \n    }\n})\nexpect(response.status).to.equal(200)\nexpect(response.data.page).to.equal(2)\nexpect(response.data.data).to.be.an('array').that.is.not.empty",
+              "err": {},
+              "uuid": "daa1b8cb-dafe-4952-886d-67e0512c9092",
+              "parentUUID": "ac56ea74-287e-4efd-b34e-5ea9a386da28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fetch user using id",
+              "fullTitle": "User tests should fetch user using id",
+              "timedOut": false,
+              "duration": 55,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.get(`${baseURL}/users/3`, {\n    headers: {\n       \"x-api-key\": \"reqres-free-v1\" \n    }\n})\nexpect(response.status).to.equal(200)\nexpect(response.data.data.id).to.equal(3)",
+              "err": {},
+              "uuid": "1a943298-eee8-488d-9a35-18032c7b8383",
+              "parentUUID": "ac56ea74-287e-4efd-b34e-5ea9a386da28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should delete user using id",
+              "fullTitle": "User tests should delete user using id",
+              "timedOut": false,
+              "duration": 176,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.delete(`${baseURL}/users/3`, {\n    headers: {\n       \"x-api-key\": \"reqres-free-v1\" \n    }\n})\nexpect(response.status).to.equal(204)",
+              "err": {},
+              "uuid": "e140f784-9fa6-4974-94d7-fcd6bfe3c390",
+              "parentUUID": "ac56ea74-287e-4efd-b34e-5ea9a386da28",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "daa1b8cb-dafe-4952-886d-67e0512c9092",
+            "1a943298-eee8-488d-9a35-18032c7b8383",
+            "e140f784-9fa6-4974-94d7-fcd6bfe3c390"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 288,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 10000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
